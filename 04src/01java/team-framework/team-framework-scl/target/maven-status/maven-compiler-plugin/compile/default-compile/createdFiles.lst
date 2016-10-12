@@ -1,0 +1,12 @@
+org/team/framework/scl/eo/T_SCL_MENU.class
+org/team/framework/scl/dao/SclUserRoleDao.class
+org/team/framework/scl/eo/T_SCL_ROLE_MENU.class
+org/team/framework/scl/dao/SclRolesDao.class
+org/team/framework/scl/dao/SclUsersDao.class
+org/team/framework/scl/dao/SclMenuDao.class
+org/team/framework/scl/eo/T_SCL_USER_ROLE.class
+org/team/framework/scl/eo/T_SCL_USERS.class
+org/team/framework/scl/dao/SclRoleMenuDao.class
+org/team/framework/scl/eo/T_SCL_ROLES.class
+org/team/framework/scl/eo/T_SCL_USER_ROLE$PK.class
+org/team/framework/scl/eo/T_SCL_ROLE_MENU$PK.class
