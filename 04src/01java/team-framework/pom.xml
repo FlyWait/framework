@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>team-framework</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Team Java EE application framework</name>
+  <repositories>
+  	<repository>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+		<id>public</id>
+		<name>Public Repositories</name>
+		<url>http://113.204.104.90:8081/nexus/content/groups/public/</url>
+	</repository>
+  </repositories>
+
+  <parent>
+  	<groupId>org.team.framework</groupId>
+  	<artifactId>team-framework-root</artifactId>
+  	<version>1.0.0</version>
+  </parent>
+  <modules>
+    <module>team-framework-tcl</module>
+    <module>team-framework-scl</module>
+    <module>team-framework-vcl</module>
+  </modules>
+</project>

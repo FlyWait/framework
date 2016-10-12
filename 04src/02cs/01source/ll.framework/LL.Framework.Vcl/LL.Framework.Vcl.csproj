@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F369327B-4892-48C4-8C94-799361D8EED2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LL.Framework.Vcl</RootNamespace>
+    <AssemblyName>LL.Framework.Vcl</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormManager\IWindowManager.cs" />
+    <Compile Include="FormManager\ModernWindowManager.cs" />
+    <Compile Include="Form\llMessageBox.xaml.cs">
+      <DependentUpon>llMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PasswordBoxHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Form\llMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Main-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Koloria\Button_Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Koloria\Add.png" />
+    <Resource Include="Resources\Image\Koloria\Add_Symbol.png" />
+    <Resource Include="Resources\Image\Koloria\Application_Blueprint.png" />
+    <Resource Include="Resources\Image\Koloria\Application_Design.png" />
+    <Resource Include="Resources\Image\Koloria\Apps.png" />
+    <Resource Include="Resources\Image\Koloria\Archive.png" />
+    <Resource Include="Resources\Image\Koloria\Blackboard.png" />
+    <Resource Include="Resources\Image\Koloria\Blackboard_2.png" />
+    <Resource Include="Resources\Image\Koloria\Blocknotes.png" />
+    <Resource Include="Resources\Image\Koloria\Blocknotes_2.png" />
+    <Resource Include="Resources\Image\Koloria\Blocknotes_Blue.png" />
+    <Resource Include="Resources\Image\Koloria\Blueprint.png" />
+    <Resource Include="Resources\Image\Koloria\Blueprint_Blog.png" />
+    <Resource Include="Resources\Image\Koloria\Blueprint_Website.png" />
+    <Resource Include="Resources\Image\Koloria\Book.png" />
+    <Resource Include="Resources\Image\Koloria\Bookmark.png" />
+    <Resource Include="Resources\Image\Koloria\Box.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Back.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Down.png" />
+    <Resource Include="Resources\Image\Koloria\Button_FastForward.png" />
+    <Resource Include="Resources\Image\Koloria\Button_First.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Last.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Play_Pause.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Rec.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Rewind.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Shuffle.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Stop.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Sync.png" />
+    <Resource Include="Resources\Image\Koloria\Button_Up.png" />
+    <Resource Include="Resources\Image\Koloria\Calendar.png" />
+    <Resource Include="Resources\Image\Koloria\Calendar_2.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar_3D_Ascending.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar_3D_Descending.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar_Big.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar_Document.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar_Files.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar_Files_Wide.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Bar_Table.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Graph.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Graph_Ascending.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Graph_Descending.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Pie.png" />
+    <Resource Include="Resources\Image\Koloria\Chart_Vertical_Bar_Poll.png" />
+    <Resource Include="Resources\Image\Koloria\Checkmark.png" />
+    <Resource Include="Resources\Image\Koloria\ClapBoard.png" />
+    <Resource Include="Resources\Image\Koloria\Clipboard.png" />
+    <Resource Include="Resources\Image\Koloria\Clipboard_Empty.png" />
+    <Resource Include="Resources\Image\Koloria\Clipboard_Full.png" />
+    <Resource Include="Resources\Image\Koloria\Clipboard_Full_2.png" />
+    <Resource Include="Resources\Image\Koloria\Clock.png" />
+    <Resource Include="Resources\Image\Koloria\Colors.png" />
+    <Resource Include="Resources\Image\Koloria\Comment.png" />
+    <Resource Include="Resources\Image\Koloria\Comment_Add.png" />
+    <Resource Include="Resources\Image\Koloria\Comment_Bubble.png" />
+    <Resource Include="Resources\Image\Koloria\Comment_Delete.png" />
+    <Resource Include="Resources\Image\Koloria\Comment_Reply.png" />
+    <Resource Include="Resources\Image\Koloria\Conversation.png" />
+    <Resource Include="Resources\Image\Koloria\Dashboard.png" />
+    <Resource Include="Resources\Image\Koloria\Denided.png" />
+    <Resource Include="Resources\Image\Koloria\Error.png" />
+    <Resource Include="Resources\Image\Koloria\Error_Symbol.png" />
+    <Resource Include="Resources\Image\Koloria\Fav.png" />
+    <Resource Include="Resources\Image\Koloria\Fav_Empty.png" />
+    <Resource Include="Resources\Image\Koloria\File.png" />
+    <Resource Include="Resources\Image\Koloria\Files.png" />
+    <Resource Include="Resources\Image\Koloria\Files_Copy.png" />
+    <Resource Include="Resources\Image\Koloria\File_Add.png" />
+    <Resource Include="Resources\Image\Koloria\File_AI_Illustrator.png" />
+    <Resource Include="Resources\Image\Koloria\File_BMP_Image.png" />
+    <Resource Include="Resources\Image\Koloria\File_Checked.png" />
+    <Resource Include="Resources\Image\Koloria\File_Content.png" />
+    <Resource Include="Resources\Image\Koloria\File_CSS_Stylesheet.png" />
+    <Resource Include="Resources\Image\Koloria\File_Delete.png" />
+    <Resource Include="Resources\Image\Koloria\File_Doc_Text_Word.png" />
+    <Resource Include="Resources\Image\Koloria\File_Edit.png" />
+    <Resource Include="Resources\Image\Koloria\File_HTML.png" />
+    <Resource Include="Resources\Image\Koloria\File_JPG_Image.png" />
+    <Resource Include="Resources\Image\Koloria\File_List.png" />
+    <Resource Include="Resources\Image\Koloria\File_MPMusic.png" />
+    <Resource Include="Resources\Image\Koloria\File_PDF_Acrobat.png" />
+    <Resource Include="Resources\Image\Koloria\File_PHP.png" />
+    <Resource Include="Resources\Image\Koloria\File_PNG_Image.png" />
+    <Resource Include="Resources\Image\Koloria\File_PSD_Photoshop.png" />
+    <Resource Include="Resources\Image\Koloria\File_Table.png" />
+    <Resource Include="Resources\Image\Koloria\File_Text.png" />
+    <Resource Include="Resources\Image\Koloria\File_Warning.png" />
+    <Resource Include="Resources\Image\Koloria\File_XLS_Excel.png" />
+    <Resource Include="Resources\Image\Koloria\File_ZIP_Archive.png" />
+    <Resource Include="Resources\Image\Koloria\Folder.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Add.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Chart.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Checked.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Edit.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Empty.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Favorites.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Info.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Network.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Remove.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Sync.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Upload.png" />
+    <Resource Include="Resources\Image\Koloria\Folder_Warning.png" />
+    <Resource Include="Resources\Image\Koloria\Gear.png" />
+    <Resource Include="Resources\Image\Koloria\Help.png" />
+    <Resource Include="Resources\Image\Koloria\Home.png" />
+    <Resource Include="Resources\Image\Koloria\Home2.png" />
+    <Resource Include="Resources\Image\Koloria\iMac.png" />
+    <Resource Include="Resources\Image\Koloria\Info.png" />
+    <Resource Include="Resources\Image\Koloria\Info_Light.png" />
+    <Resource Include="Resources\Image\Koloria\Location.png" />
+    <Resource Include="Resources\Image\Koloria\MacBook.png" />
+    <Resource Include="Resources\Image\Koloria\MacBookAir.png" />
+    <Resource Include="Resources\Image\Koloria\MacBookPro.png" />
+    <Resource Include="Resources\Image\Koloria\Mail.png" />
+    <Resource Include="Resources\Image\Koloria\MailBox.png" />
+    <Resource Include="Resources\Image\Koloria\Mails.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Add.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Compose.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Delete.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Gmail.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Info.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Old.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Open.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Reply.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Verified.png" />
+    <Resource Include="Resources\Image\Koloria\Mail_Warning.png" />
+    <Resource Include="Resources\Image\Koloria\News.png" />
+    <Resource Include="Resources\Image\Koloria\Pen.png" />
+    <Resource Include="Resources\Image\Koloria\Pencil_2.png" />
+    <Resource Include="Resources\Image\Koloria\Pin.png" />
+    <Resource Include="Resources\Image\Koloria\Project.png" />
+    <Resource Include="Resources\Image\Koloria\Project_2.png" />
+    <Resource Include="Resources\Image\Koloria\Rating.png" />
+    <Resource Include="Resources\Image\Koloria\Search.png" />
+    <Resource Include="Resources\Image\Koloria\Sticky.png" />
+    <Resource Include="Resources\Image\Koloria\Target.png" />
+    <Resource Include="Resources\Image\Koloria\Trash.png" />
+    <Resource Include="Resources\Image\Koloria\Trash_Delete.png" />
+    <Resource Include="Resources\Image\Koloria\Trash_Full.png" />
+    <Resource Include="Resources\Image\Koloria\Trash_Warning.png" />
+    <Resource Include="Resources\Image\Koloria\User.png" />
+    <Resource Include="Resources\Image\Koloria\User2.png" />
+    <Resource Include="Resources\Image\Koloria\Valid.png" />
+    <Resource Include="Resources\Image\Koloria\Warning.png" />
+    <Resource Include="Resources\Image\Koloria\Warning_2.png" />
+    <Resource Include="Resources\Image\Koloria\Windows.png" />
+    <Resource Include="Resources\Image\Koloria\Windows8.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_3Cols.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_Header.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_List.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_ListView.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_Results.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_Sidebar.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_SplitScreen.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_Splitscreen_3Columns.png" />
+    <Resource Include="Resources\Image\Koloria\Window_App_View.png" />
+    <Resource Include="Resources\Image\Koloria\Window_Config.png" />
+    <Resource Include="Resources\Image\Koloria\Window_Generic.png" />
+    <Resource Include="Resources\Image\Koloria\Window_Sidebar.png" />
+    <Resource Include="Resources\Image\Koloria\Wooden_Box.png" />
+    <Resource Include="Resources\Image\Koloria\Wooden_Box2.png" />
+    <Resource Include="Resources\Image\Koloria\Zoom_In.png" />
+    <Resource Include="Resources\Image\Koloria\Zoom_Out.png" />
+    <Resource Include="Resources\Image\Koloria\_koloria-free-icon-set.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
