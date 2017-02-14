@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<AppConf>
-  <Host>127.0.0.1</Host>
-  <Port>8080</Port>
-  <Path>test</Path>
-</AppConf>
