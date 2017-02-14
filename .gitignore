@@ -24,3 +24,4 @@ Thumbs.db
 *.sbr
 *.DS_Store
 *.class
+.settings
