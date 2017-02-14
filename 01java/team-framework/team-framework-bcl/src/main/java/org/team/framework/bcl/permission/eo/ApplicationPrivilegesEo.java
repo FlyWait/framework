@@ -9,4 +9,5 @@ import org.team.framework.tcl.eo.base.BaseEo;
  * @Version 1.0.0
  */
 public class ApplicationPrivilegesEo extends BaseEo{
+    private static final long serialVersionUID = 3175930822488686997L;
 }

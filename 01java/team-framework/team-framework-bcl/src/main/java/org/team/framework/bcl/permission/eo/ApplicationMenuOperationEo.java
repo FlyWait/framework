@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="uam_application_menu_operation")
 public class ApplicationMenuOperationEo extends BaseEo{
+    private static final long serialVersionUID = -3225191620151004608L;
     /** 应用菜单操作ID */
     private Long id;
     /** 应用系统菜单ID */
