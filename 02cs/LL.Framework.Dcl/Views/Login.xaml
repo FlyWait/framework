@@ -1,0 +1,26 @@
+﻿<mui:ModernWindow x:Class="LL.Framework.dcl.Views.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        Height="350" Width="500" IsTitleVisible="True" Style="{StaticResource BlankWindow}"   x:Name="LoginView" 
+        WindowStartupLocation="CenterScreen" BorderThickness="20" Title="{Binding Title}" ResizeMode="NoResize">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBox Text="{Binding UserCode}"></TextBox>
+            <PasswordBox x:Name="UserPass" PasswordChar="*" ></PasswordBox>
+            <Button Content="登录" CommandParameter="{Binding ElementName = LoginView }" Command="{Binding AuthenticationCommand}" Margin="0,0,0,8" />
+            <Button Content="退出" Command="{Binding ExitCommand}" Margin="0,0,0,8" />
+        </StackPanel>
+    </Grid>
+</mui:ModernWindow>
