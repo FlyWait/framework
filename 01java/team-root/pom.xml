@@ -1,0 +1,552 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.team</groupId>
+	<artifactId>team-root</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>team-root</name>
+	<properties>
+		<!-- 文件拷贝时的编码 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- 编译时的编码 -->
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<jdk.version>1.8</jdk.version>
+		<maven.site.version>3.2</maven.site.version>
+		<dependency.scope>compile</dependency.scope>
+		<spring.version>4.3.3.RELEASE</spring.version>
+		<org.mybatis.version>3.4.1</org.mybatis.version>
+		<org.mybatis.spring.version>1.3.0</org.mybatis.spring.version>
+		<hibernate.version>5.2.3.Final</hibernate.version>
+		<spring-security-web.version>4.1.3.RELEASE</spring-security-web.version>
+		<aspectj.version>1.8.9</aspectj.version>
+		<cxf.version>3.0.0</cxf.version>
+		<mysql.connector.version>6.0.4</mysql.connector.version>
+		<org.apache.tiles.version>3.0.7</org.apache.tiles.version>
+		<org.quartz.scheduler.version>2.2.3</org.quartz.scheduler.version>
+		<commons.beanutils.version>1.8.3</commons.beanutils.version>
+		<org.apache.commons.version>3.5</org.apache.commons.version>
+		<commons.codec.version>1.10</commons.codec.version>
+		<cglib.version>3.2.4</cglib.version>
+		<com.mchange.version>0.9.5.2</com.mchange.version>
+		<commons.pool.version>1.6</commons.pool.version>
+		<commons.dbcp.version>1.4</commons.dbcp.version>
+		<commons.collections.version>3.2.2</commons.collections.version>
+		<org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
+		<com.fasterxml.jackson.core.version>2.8.4</com.fasterxml.jackson.core.version>
+		<log4j.version>1.2.17</log4j.version>
+		<org.slf4j.version>1.7.21</org.slf4j.version>
+		<org.apache.poi.version>3.15</org.apache.poi.version>
+		<com.google.zxing.version>3.3.0</com.google.zxing.version>
+		<javax.servlet.version>1.2</javax.servlet.version>
+		<servlet.api.version>2.5</servlet.api.version>
+		<taglibs.version>1.1.2</taglibs.version>
+		<commons.fileupload.version>1.3.2</commons.fileupload.version>
+		<javax.mail.verison>1.4.7</javax.mail.verison>
+		<junit.version>4.12</junit.version>
+		
+		<!-- 插件版本 -->
+		<maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+		<maven.resources.plugin.version>3.0.1</maven.resources.plugin.version>
+		<maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
+		<surefire.junit4.version>2.19.1</surefire.junit4.version>
+		<maven.war.plugin.version>3.0.0</maven.war.plugin.version>
+		<maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
+		<maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
+		<maven.install.plugin.version>2.5.2</maven.install.plugin.version>
+		<maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
+		<maven.assembly.plugin.version>2.6</maven.assembly.plugin.version>
+		<maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
+		<versions.maven.plugin.version>2.3</versions.maven.plugin.version>
+	</properties>
+	<prerequisites>
+		<maven>3.0.0</maven>
+	</prerequisites>
+	<repositories>
+		<!-- <repository> <id>central</id> <name>Central Repository</name> <url>http://repo.maven.apache.org/maven2</url> 
+			<snapshots> <enabled>false</enabled> </snapshots> </repository> <repository> 
+			<id>spy</id> <name>Spy Repository</name> <url>http://files.couchbase.com/maven2/</url> 
+			<snapshots> <enabled>false</enabled> </snapshots> </repository> <repository> 
+			<id>alfresco</id> <name>Alfresco Repository(Activiti)</name> <url>https://maven.alfresco.com/nexus/content/groups/public/</url> 
+			<snapshots> <enabled>false</enabled> </snapshots> </repository> <repository> 
+			<id>jboss</id> <name>JBoss repository</name> <layout>default</layout> <url>https://repository.jboss.org/nexus/content/groups/public/</url> 
+			<snapshots> <enabled>false</enabled> </snapshots> </repository> -->
+	</repositories>
+	<dependencyManagement>
+		<dependencies>
+			<!-- apache common -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils-core</artifactId>
+				<version>${commons.beanutils.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${org.apache.commons.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons.codec.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- spring-security-web -->
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${spring-security-web.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${spring-security-web.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.springframework.security</groupId>
+			    <artifactId>spring-security-taglibs</artifactId>
+			    <version>${spring-security-web.version}</version>
+			</dependency>
+
+			<!-- aspectj -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>${cglib.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- hibernate -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			
+			<!-- Mybatis -->
+			<dependency>
+			    <groupId>org.mybatis</groupId>
+			    <artifactId>mybatis</artifactId>
+			    <version>${org.mybatis.version}</version>
+			    <scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+			    <groupId>org.mybatis</groupId>
+			    <artifactId>mybatis-spring</artifactId>
+			    <version>${org.mybatis.spring.version}</version>
+			    <scope>${dependency.scope}</scope>
+			</dependency>
+			
+
+			<!-- c3p0 -->
+			<dependency>
+				<groupId>com.mchange</groupId>
+				<artifactId>c3p0</artifactId>
+				<version>${com.mchange.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- dbcp -->
+			<dependency>
+				<groupId>commons-pool</groupId>
+				<artifactId>commons-pool</artifactId>
+				<version>${commons.pool.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>${commons.dbcp.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>${commons.collections.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- json -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+				<version>${org.codehaus.jackson.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${org.codehaus.jackson.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${com.fasterxml.jackson.core.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${com.fasterxml.jackson.core.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- tiles -->
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-servlet</artifactId>
+				<version>${org.apache.tiles.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-jsp</artifactId>
+				<version>${org.apache.tiles.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- log4j -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- slf4j -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${org.slf4j.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- excel parsing -->
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${org.apache.poi.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${org.apache.poi.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- barcode -->
+			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>core</artifactId>
+				<version>${com.google.zxing.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>javase</artifactId>
+				<version>${com.google.zxing.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- jstl -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${javax.servlet.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+			    <groupId>javax.servlet</groupId>
+			    <artifactId>servlet-api</artifactId>
+			    <version>${servlet.api.version}</version>
+			    <scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>standard</artifactId>
+				<version>${taglibs.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- file uploading -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons.fileupload.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- CXF -->
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-frontend-jaxws</artifactId>
+				<version>${cxf.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
+				<version>${cxf.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- Quartz -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${org.quartz.scheduler.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>c3p0</groupId>
+						<artifactId>c3p0</artifactId>
+					</exclusion>
+				</exclusions>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz-jobs</artifactId>
+				<version>${org.quartz.scheduler.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- mail -->
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>${javax.mail.verison}</version>
+			</dependency>
+
+			<!-- database connector -->
+			<!-- mysql connector -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.connector.version}</version>
+				<scope>${dependency.scope}</scope>
+			</dependency>
+
+			<!-- junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<pluginManagement>
+			<plugins>
+				<!-- compiler插件, 设定JDK版本 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin.version}</version>
+					<configuration>
+						<source>${jdk.version}</source>
+						<target>${jdk.version}</target>
+						<showWarnings>true</showWarnings>
+					</configuration>
+				</plugin>
+				<!-- resource插件	-->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven.resources.plugin.version}</version>
+					<!--  
+					<configuration>
+						<nonFilteredFileExtensions>
+							<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+							<nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
+							<nonFilteredFileExtension>bmp</nonFilteredFileExtension>
+							<nonFilteredFileExtension>png</nonFilteredFileExtension>
+							<nonFilteredFileExtension>gif</nonFilteredFileExtension>
+							<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+							<nonFilteredFileExtension>swf</nonFilteredFileExtension>
+							<nonFilteredFileExtension>fla</nonFilteredFileExtension>
+							<nonFilteredFileExtension>zip</nonFilteredFileExtension>
+							<nonFilteredFileExtension>rar</nonFilteredFileExtension>
+							<nonFilteredFileExtension>jar</nonFilteredFileExtension>
+							<nonFilteredFileExtension>exe</nonFilteredFileExtension>
+							<nonFilteredFileExtension>dll</nonFilteredFileExtension>
+							<nonFilteredFileExtension>so</nonFilteredFileExtension>
+							<nonFilteredFileExtension>doc</nonFilteredFileExtension>
+							<nonFilteredFileExtension>docx</nonFilteredFileExtension>
+							<nonFilteredFileExtension>xls</nonFilteredFileExtension>
+							<nonFilteredFileExtension>xlsx</nonFilteredFileExtension>
+							<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+							<nonFilteredFileExtension>data</nonFilteredFileExtension>
+							<nonFilteredFileExtension>dat</nonFilteredFileExtension>
+						</nonFilteredFileExtensions>
+					</configuration>
+					-->
+				</plugin>
+				<!-- test插件, 仅测试名称为*Test的类,	使用支持分组测试的surefire-junit47 driver -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven.surefire.plugin.version}</version>
+					<configuration>
+						<includes>
+							<include>**/*Test.java</include>
+						</includes>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.surefire</groupId>
+							<artifactId>surefire-junit4</artifactId>
+							<version>${surefire.junit4.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<!-- war打包插件, 设定war包名称不带版本号	-->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${maven.war.plugin.version}</version>
+					<configuration>
+						<warSourceDirectory>${basedir}/webapp</warSourceDirectory>
+						<archive>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+				<!-- clean插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven.clean.plugin.version}</version>
+				</plugin>
+				<!-- install插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${maven.install.plugin.version}</version>
+				</plugin>
+				<!-- enforcer插件, 避免被依赖的依赖引入过期的jar包 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>${maven.enforcer.plugin.version}</version>
+					<executions>
+						<execution>
+							<id>enforce-banned-dependencies</id>
+							<goals>
+								<goal>enforce</goal>
+							</goals>
+							<configuration>
+								<rules>
+									<requireMavenVersion>
+										<version>3.0.3</version>
+									</requireMavenVersion>
+									<requireJavaVersion>
+										<version>${jdk.version}</version>
+									</requireJavaVersion>
+									<!--requireUpperBoundDeps/-->
+									<bannedDependencies>
+										<searchTransitive>true</searchTransitive>
+										<excludes>
+											<exclude>*:commons-logging</exclude>
+											<exclude>commons-lang:2.*</exclude>
+											<exclude>commons-lang3:3.*</exclude>
+											<exclude>aspectj*:aspectj*</exclude>
+											<exclude>org.springframework</exclude>
+										</excludes>
+										<includes>
+											<include>org.springframework:*:4.*</include>
+										</includes>
+									</bannedDependencies>
+								</rules>
+								<fail>true</fail>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- assembly插件	-->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${maven.assembly.plugin.version}</version>
+				</plugin>
+				<!-- dependency相关插件	-->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>${maven.dependency.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>${versions.maven.plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
